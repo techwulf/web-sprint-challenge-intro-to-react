@@ -4,6 +4,9 @@ import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import axios from 'axios';
 import { stripIgnoredCharacters } from 'graphql';
 
+import Character from './components/Character';
+
+
 const App = () => {
   const [characters, setCharacters] = useState(null);
 
@@ -25,6 +28,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      {characters && 
+        characters.map((character, index)=> {
+          return <Character key={index} char={character}/>
+        })
+      }
     </div>
   );
 }
