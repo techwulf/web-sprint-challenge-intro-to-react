@@ -14,7 +14,6 @@ const App = () => {
     axios.get('https://swapi.dev/api/people')
       .then(res => {
         setCharacters(res.data);
-        console.log(characters);
       })
       .catch(err => {console.error(err);});
   },[])
