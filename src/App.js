@@ -3,6 +3,7 @@ import './App.css';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import axios from 'axios';
 import { stripIgnoredCharacters } from 'graphql';
+import styled from 'styled-components';
 
 import Character from './components/Character';
 
