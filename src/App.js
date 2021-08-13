@@ -1,7 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import axios from 'axios';
+import { stripIgnoredCharacters } from 'graphql';
 
 const App = () => {
+  const [characters, setCharacters] = useState(null);
+
+  useEffect(() => {
+    axios.get('https://swapi.dev/api/people')
+      .then(res => {
+        setCharacters(res.data);
+        console.log(characters);
+      })
+      .catch(err => {console.error(err);});
+  },[])
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
